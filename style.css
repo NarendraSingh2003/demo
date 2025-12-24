@@ -1,0 +1,304 @@
+/* =====================================================
+   ROOT VARIABLES
+===================================================== */
+:root {
+  --primary-blue: #0b2c5d;
+  --gold: #caa06a;
+  --orange: #ff8c00;
+  --header-height: 80px;
+}
+
+/* =====================================================
+   GLOBAL
+===================================================== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  padding-top: var(--header-height);
+}
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+.navbar-brand {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--primary-blue);
+}
+
+.main-menu .nav-link {
+  position: relative;
+  margin: 0 14px;
+  font-weight: 500;
+  color: #000 !important;
+  transition: color 0.3s ease;
+}
+
+.main-menu .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: var(--orange);
+  transition: width 0.3s ease;
+}
+
+.main-menu .nav-link:hover,
+.main-menu .nav-link.active {
+  color: var(--orange) !important;
+}
+
+.main-menu .nav-link:hover::after,
+.main-menu .nav-link.active::after {
+  width: 100%;
+}
+
+/* =====================================================
+   HEADER CONTACT
+===================================================== */
+.header-contact span {
+  color: #000;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.header-contact i {
+  color: var(--orange);
+  margin-right: 6px;
+  transition: transform 0.3s ease;
+}
+
+.header-contact span:hover {
+  color: var(--orange);
+}
+
+.header-contact span:hover i {
+  transform: scale(1.15);
+}
+
+/* =====================================================
+   SIGN IN BUTTON
+===================================================== */
+.btn-signin {
+  border: 2px solid var(--orange);
+  background: transparent;
+  color: #000;
+  font-weight: 600;
+  padding: 6px 18px;
+  transition: all 0.3s ease;
+}
+
+.btn-signin:hover {
+  background: var(--orange);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* =====================================================
+   HERO SECTION
+===================================================== */
+.hero-section {
+  position: relative;
+  height: calc(100vh - var(--header-height));
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Carousel full height */
+.carousel,
+.carousel-inner,
+.carousel-item {
+  height: 100%;
+}
+
+/* ✅ FIXED HERO IMAGE (FULL & CENTERED) */
+.hero-slide {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center; /* ✅ FIX */
+}
+
+/* Slide images */
+.slide-1 {
+  background-image: url("https://images.pexels.com/photos/7918035/pexels-photo-7918035.jpeg");
+}
+
+.slide-2 {
+  background-image: url("https://images.pexels.com/photos/5716008/pexels-photo-5716008.jpeg");
+}
+
+.slide-3 {
+  background-image: url("https://images.pexels.com/photos/8145242/pexels-photo-8145242.jpeg");
+}
+
+/* =====================================================
+   HERO CONTENT LAYER
+===================================================== */
+.hero-content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+/* =====================================================
+   HERO LEFT CONTENT (ORANGE / CREAM BOX)
+===================================================== */
+.hero-left {
+  padding: 80px;
+  background: rgba(255, 248, 235, 0.18);
+  border-radius: 28px;
+  border: 2px solid rgba(255, 165, 0, 0.35);
+  box-shadow: 0 25px 60px rgba(255, 165, 0, 0.25);
+  transition: all 0.4s ease;
+}
+
+.hero-left:hover {
+  border-color: var(--orange);
+  box-shadow: 0 35px 80px rgba(255, 140, 0, 0.45);
+  transform: translateY(-6px);
+}
+
+.hero-title {
+  font-size: 80px;
+  font-weight: 800;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.hero-title .text-primary {
+  color: var(--orange) !important;
+  font-weight: 900;
+  text-shadow: 0 0 14px rgba(255, 140, 0, 0.55);
+}
+
+.hero-subtitle {
+  font-size: 18px;
+  opacity: 0.95;
+}
+
+/* Badge */
+.badge-box {
+  background: rgba(255, 165, 0, 0.15);
+  border: 1px solid rgba(255, 165, 0, 0.4);
+  padding: 8px 16px;
+  border-radius: 50px;
+}
+
+.badge-box .dot {
+  width: 8px;
+  height: 8px;
+  background: var(--orange);
+  border-radius: 50%;
+}
+
+/* =====================================================
+   HERO BUTTONS
+===================================================== */
+.hero-section .btn-primary {
+  background: var(--orange);
+  border: none;
+  font-weight: 700;
+  box-shadow: 0 10px 25px rgba(255, 140, 0, 0.35);
+  transition: all 0.35s ease;
+}
+
+.hero-section .btn-primary:hover {
+  background: #ff9f1a;
+  transform: translateY(-3px);
+  box-shadow: 0 18px 45px rgba(255, 140, 0, 0.6);
+}
+
+.hero-section .btn-outline-light {
+  border: 2px solid #fff;
+  font-weight: 600;
+  transition: all 0.35s ease;
+}
+
+.hero-section .btn-outline-light:hover {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 14px 35px rgba(255, 140, 0, 0.45);
+}
+
+/* =====================================================
+   FORM CARD
+===================================================== */
+.portfolio-form {
+  background: #b8c0cf;
+  max-width: 420px;
+  width: 100%;
+  padding: 30px;
+  border-radius: 28px;
+  border: 2px solid transparent;
+  box-shadow: 0 25px 60px rgba(0,0,0,.25);
+  transition: all 0.35s ease;
+}
+
+.portfolio-form:hover {
+  border-color: var(--orange);
+  box-shadow: 0 30px 70px rgba(255,165,0,.35);
+  transform: translateY(-4px);
+}
+
+.portfolio-form .form-control,
+.portfolio-form .input-group-text {
+  border: none;
+  border-radius: 12px;
+  box-shadow: inset 0 0 0 1px #ddd;
+}
+
+.portfolio-form .form-control:focus {
+  box-shadow: inset 0 0 0 2px var(--orange);
+}
+
+/* =====================================================
+   SUBMIT BUTTON – GLOW ON FOCUS
+===================================================== */
+.submit-btn {
+  background: #fff4e6;
+  color: #333;
+  border: 2px solid #f0d9b5;
+  font-weight: 600;
+  border-radius: 999px;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: #fff;
+}
+
+.submit-btn:focus {
+  box-shadow:
+    0 0 0 4px rgba(255, 140, 0, 0.35),
+    0 0 20px rgba(255, 140, 0, 0.65);
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+@media (max-width: 991px) {
+  .hero-left {
+    padding: 40px;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 52px;
+  }
+}
