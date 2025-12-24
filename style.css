@@ -292,6 +292,35 @@ body {
 /* =====================================================
    RESPONSIVE
 ===================================================== */
+/* ===============================
+   DESKTOP (Default ≥ 1200px)
+================================ */
+.hero-left {
+  padding: 80px 100px;
+  text-align: left;
+}
+
+.hero-title {
+  font-size: 64px;
+  line-height: 1.2;
+}
+
+/* ===============================
+   LAPTOP / TABLET (≤ 1199px)
+================================ */
+@media (max-width: 1199px) {
+  .hero-left {
+    padding: 60px;
+  }
+
+  .hero-title {
+    font-size: 56px;
+  }
+}
+
+/* ===============================
+   TABLET (≤ 991px)
+================================ */
 @media (max-width: 991px) {
   .hero-left {
     padding: 40px;
@@ -299,6 +328,20 @@ body {
   }
 
   .hero-title {
-    font-size: 52px;
+    font-size: 48px;
+  }
+}
+
+/* ===============================
+   MOBILE (≤ 576px)
+================================ */
+@media (max-width: 576px) {
+  .hero-left {
+    padding: 24px;
+  }
+
+  .hero-title {
+    font-size: 34px;
+    line-height: 1.3;
   }
 }
