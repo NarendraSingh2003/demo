@@ -1,273 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Intensify Research</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <title>Intensify Research</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- ================= BOOTSTRAP CSS ================= -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- ================= BOOTSTRAP ICONS ================= -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
-<!-- ================= CUSTOM CSS ================= -->
-<link rel="stylesheet" href="style.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- =====================================================
-     TOP STOCK MARKET BAR (FIXED TOP)
-===================================================== -->
+<!-- ================= TOP TICKER ================= -->
 <div class="fixed-top text-white py-2"
      style="background:linear-gradient(90deg,#0b1f3a,#102b52); z-index:1060;">
-  <div class="container-fluid d-flex align-items-center">
-
-    <!-- Stock ticker -->
-    <marquee scrollamount="6" direction="left">
-      <span class="me-5 fw-semibold">
-        NIFTY 50 <span style="color:#dbe7ff;">22,145.30</span>
-        <span style="color:#28d17c;">▲ +1.45%</span>
-      </span>
-
-      <span class="me-5 fw-semibold">
-        SENSEX <span style="color:#dbe7ff;">73,182.90</span>
-        <span style="color:#ff4d4d;">▼ -0.12%</span>
-      </span>
-
-      <span class="me-5 fw-semibold">
-        BANK NIFTY <span style="color:#dbe7ff;">46,520.80</span>
-        <span style="color:#28d17c;">▲ +0.98%</span>
-      </span>
-
-      <span class="fw-semibold">
-        SBI <span style="color:#dbe7ff;">₹642.10</span>
-        <span style="color:#ff4d4d;">▼ -0.31%</span>
-      </span>
+  <div class="container-fluid">
+    <marquee scrollamount="6">
+      <span class="me-5">NIFTY 50 <span class="market-up">22,145.30 ▲</span></span>
+      <span class="me-5">SENSEX <span class="market-down">73,182.90 ▼</span></span>
+      <span class="me-5">BANK NIFTY <span class="market-up">46,520.80 ▲</span></span>
+      <span class="me-5">FIN NIFTY <span class="market-flat">21,310.40</span></span>
+      <span class="me-5">RELIANCE <span class="market-up">₹2,865.25 ▲</span></span>
+      <span class="me-5">TCS <span class="market-down">₹3,912.60 ▼</span></span>
+      <span class="me-5">INFY <span class="market-up">₹1,645.30 ▲</span></span>
+      <span>ADANI PORTS <span class="market-up">₹1,196.50 ▲</span></span>
     </marquee>
-
   </div>
 </div>
 
-<!-- =====================================================
-     MAIN NAVBAR (FIXED BELOW TOP BAR)
-===================================================== -->
+<!-- ================= NAVBAR ================= -->
 <nav class="navbar navbar-expand-lg bg-white shadow-sm fixed-top" style="top:42px;">
   <div class="container">
-
-    <!-- Logo -->
-    <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
-      <img src="images.png" alt="Intensify Research" style="height:45px;">
+    <a class="navbar-brand fw-bold" href="#">
+      <img src="images.png" alt="Logo" height="45">
     </a>
 
-    <!-- Mobile toggle -->
     <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#mainNav">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- Navbar content -->
     <div class="collapse navbar-collapse" id="mainNav">
-
-      <!-- Navigation menu -->
       <ul class="navbar-nav mx-auto main-menu">
-        <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
       </ul>
 
-      <!-- Header contact + CTA -->
-      <div class="d-flex align-items-center gap-4 header-actions">
-
-        <div class="d-none d-lg-flex flex-column text-end small header-contact">
-          <span>
-            <i class="bi bi-telephone"></i> 0731-4287574
-          </span>
-          <span>
-            <i class="bi bi-envelope"></i> info@intensifyresearch.com
-          </span>
-        </div>
-
-        <a href="#" class="btn btn-signin">Sign In</a>
-      </div>
-
+      <a href="#" class="btn btn-warning text-white fw-bold rounded-pill px-4">
+        Sign In
+      </a>
     </div>
   </div>
 </nav>
 
-<!-- =====================================================
-     HERO SECTION (FULL IMAGE AFTER HEADER)
-===================================================== -->
-<section class="hero-section" id="home">
+<!-- ================= HERO SECTION ================= -->
+<section class="hero-section pt-4" id="home">
+  <div class="container-fluid pt-3">
+    <div class="row align-items-center">
 
-  <!-- Background image carousel -->
-  <div id="heroCarousel"
-       class="carousel slide carousel-fade h-100"
-       data-bs-ride="carousel"
-       data-bs-interval="4000">
+      <!-- LEFT CONTENT -->
+      <div class="col-lg-6 col-md-12 pt-3">
 
-    <div class="carousel-inner h-100">
-      <div class="carousel-item active hero-slide slide-1"></div>
-      <div class="carousel-item hero-slide slide-2"></div>
-      <div class="carousel-item hero-slide slide-3"></div>
-    </div>
-  </div>
+        <h1 class="fw-bold display-5">
+          <span id="heroTextMain"></span>
+          <span class="text-warning" id="heroTextLast"></span>
+        </h1>
 
-  <!-- Content over hero images -->
-  <div class="hero-content">
-    <div class="container-fluid h-100">
-      <div class="row h-100 align-items-center">
+        <p class="mt-3 fs-5">
+          A SEBI registered research platform focused on informed investing.
+        </p>
 
-        <!-- ================= LEFT HERO CONTENT ================= -->
-        <div class="col-lg-7 text-white text-center text-lg-start">
+        <ul class="list-unstyled mt-3">
+          <li class="fw-bold text-dark mb-2">✔ Research-Based Stock Insights</li>
+          <li class="fw-bold text-dark mb-2">✔ Timely Buy–Sell–Hold Insights</li>
+          <li class="fw-bold text-dark mb-2">✔ 1:1 Expert Support</li>
+          <li class="fw-bold text-dark">✔ Trusted by 4000+ Investors</li>
+        </ul>
 
-          <div class="d-inline-flex align-items-center gap-2 badge-box mb-3">
-            <span
-              style="
-                width:12px;
-                height:12px;
-                background:#ff8c00;
-                border-radius:50%;
-                display:inline-block;
-                box-shadow:
-                  0 0 0 3px rgba(255,140,0,0.25),
-                  0 0 10px rgba(255,140,0,0.8);
-              ">
-            </span>
-            <span style="font-weight:600;">
-              SEBI Reg. No. INH000009834
-            </span>
-          </div>
-
-          <h1 class="hero-title mb-3">
-            <span id="heroTextMain"></span>
-            <span class="text-primary" id="heroTextLast"></span>
-          </h1>
-
-         <p class="hero-subtitle mb-4">
-  A SEBI registered research platform focused on informed and responsible investing.
-</p>
-
-          <div class="d-flex gap-3 flex-column flex-sm-row">
-            <button class="btn btn-primary btn-lg">Get Free Guidance</button>
-            <button class="btn btn-outline-light btn-lg">Explore Services</button>
-          </div>
-
-        </div>
-
-<div class="col-lg-2 d-flex justify-content-center align-items-center">
-  <img
-    src="sebi-registered.png"
-    alt="SEBI Registered Logo"
-    style="
-      height:600px;                           /* LOGO SIZE */
-      transform:translate(-50%, -30px);      /* 🔧 LEFT 50% + MOVE UP (change px for more/less up) */
-      transition:all 0.3s ease;               /* smooth hover animation */
-      cursor:pointer;
-    "
-    onmouseover="
-      this.style.transform='translate(-50%, -30px) scale(1.12)'; 
-      this.style.filter='drop-shadow(0 0 14px orange)';
-    "
-    onmouseout="
-      this.style.transform='translate(-50%, -30px) scale(1)';
-      this.style.filter='none';
-    "
-  >
-</div>
-
-
-
-
-        <!-- ================= RIGHT FORM ================= -->
-        <div class="col-lg-3">
-          <div class="portfolio-form bg-white form-shift-left">
-
-            <p class="mb-4 text-dark fs-5 fw-bold text-center">
-              <strong>Start Investing Now!</strong>
-            </p>
-
-            <div class="mb-3">
-              <label class="form-label fw-semibold text-dark">
-                Full Name<span class="required">*</span>
-              </label>
-              <input type="text" class="form-control form-control-lg">
-            </div>
-
-            <div class="mb-3">
-              <label class="form-label fw-semibold text-dark">
-                Email Address<span class="required">*</span>
-              </label>
-              <input type="email" class="form-control form-control-lg">
-            </div>
-
-            <div class="mb-3">
-              <label class="form-label fw-semibold text-dark">
-                Mobile Number <span class="required">*</span>
-              </label>
-              <div class="input-group input-group-lg">
-                <span class="input-group-text bg-white d-flex align-items-center gap-2">
-                  <img src="https://flagcdn.com/w20/in.png" alt="India" height="14">
-                  +91
-                </span>
-                <input type="tel" class="form-control">
-              </div>
-            </div>
-
-            <div class="form-check mb-4">
-              <input class="form-check-input" type="checkbox">
-              <label class="form-check-label small text-dark">
-                I have read & accepted the
-                <a href="#" class="text-decoration-none">Privacy Policy</a> &
-                <a href="#" class="text-decoration-none">T&C</a>
-              </label>
-            </div>
-
-            <button class="btn btn-white w-100 py-2 submit-btn">
-              Submit
-            </button>
-
-          </div>
+        <div class="hero-cta">
+          <a href="#" class="cta-primary">
+            Get Free Guidance <span class="cta-arrow">→</span>
+          </a>
+          <a href="#" class="cta-secondary">
+            Explore Services
+          </a>
         </div>
 
       </div>
+
+      <!-- RIGHT VISUAL -->
+      <div class="col-lg-6 col-md-12 d-flex justify-content-center position-relative mt-4 mt-lg-0">
+        <div class="center-graphic position-relative">
+          <img src="trading3.png" alt="Trading Main" class="img-fluid">
+
+          <div class="icon-circle circle-top"><span class="text">Live Targets</span></div>
+          <div class="icon-circle circle-left"><span class="text">Technical Analysis</span></div>
+          <div class="icon-circle circle-right"><span class="text">Risk Management</span></div>
+        </div>
+      </div>
+
     </div>
   </div>
 
+  <!-- HERO BOTTOM WAVE -->
+  <div class="hero-wave">
+    <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+      <path
+        d="M0,192 C120,224 240,256 360,250
+           C480,245 600,203 720,192
+           C840,181 960,203 1080,213
+           C1200,224 1320,224 1440,213
+           L1440,320 L0,320 Z">
+      </path>
+    </svg>
+  </div>
 </section>
 
+<!-- FLOATING CONTACT BUTTON -->
+<div class="fill-btn" id="openFormBtn">
+  Contact<br>Us
+</div>
 
-<!-- ================= BOOTSTRAP JS ================= -->
+<!-- POPUP FORM -->
+<div class="form-overlay" id="popupForm">
+  <div class="form-box">
+    <span class="close-btn" id="closeFormBtn">×</span>
+
+    <h4 class="text-center fw-bold mb-2">Request a Call Back</h4>
+    <p class="text-center mb-4">We will contact you shortly</p>
+
+    <form>
+      <input type="text" class="form-control mb-3" placeholder="Full Name" required>
+      <input type="email" class="form-control mb-3" placeholder="Email Address" required>
+      <input type="tel" class="form-control mb-3" placeholder="Mobile Number" required>
+
+      <button type="submit" class="btn btn-warning w-100 fw-bold">
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-
-
-<!-- HERO TEXT ANIMATION -->
+<!-- HERO TEXT ROTATION + POPUP -->
 <script>
-  const heroTexts = [
-    "Learn Stock Market From Experts",
-    "Start Your Trading Journey Today",
-    "Grow Your Wealth With Confidence",
-    "Master Technical Analysis",
-    "Build Your Investment Portfolio"
-  ];
+const heroTexts = [
+  "Learn Stock Market From Experts",
+  "Start Your Trading Journey Today",
+  "Grow Your Wealth With Confidence",
+  "Master Technical Analysis",
+  "Build Your Investment Portfolio"
+];
 
-  let i = 0;
-  const main = document.getElementById("heroTextMain");
-  const last = document.getElementById("heroTextLast");
+let i = 0;
+const main = document.getElementById("heroTextMain");
+const last = document.getElementById("heroTextLast");
 
-  function updateText() {
-    const words = heroTexts[i].split(" ");
-    main.textContent = words.slice(0, -1).join(" ") + " ";
-    last.textContent = words[words.length - 1];
-    i = (i + 1) % heroTexts.length;
-  }
+function updateText() {
+  const words = heroTexts[i].split(" ");
+  main.textContent = words.slice(0, -1).join(" ") + " ";
+  last.textContent = words[words.length - 1];
+  i = (i + 1) % heroTexts.length;
+}
+updateText();
+setInterval(updateText, 3000);
 
-  updateText();
-  setInterval(updateText, 3000);
+document.getElementById("openFormBtn").onclick = () =>
+  document.getElementById("popupForm").style.display = "flex";
+
+document.getElementById("closeFormBtn").onclick = () =>
+  document.getElementById("popupForm").style.display = "none";
 </script>
 
-
 </body>
-</html> 
+</html>

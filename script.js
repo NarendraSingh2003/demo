@@ -1,47 +1,25 @@
-// ================= FINAL JS ONLY =================
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
 
-  /* ---------- FAST HERO SLIDER ---------- */
-  const heroCarousel = document.querySelector("#heroCarousel");
+  const openBtn  = document.getElementById("openFormBtn");
+  const closeBtn = document.getElementById("closeFormBtn");
+  const popup    = document.getElementById("popupForm");
 
-  if (heroCarousel) {
-    new bootstrap.Carousel(heroCarousel, {
-      interval: 1800,   // fast auto slide (ms)
-      ride: "carousel",
-      pause: false,     // do not stop on hover
-      wrap: true,       // infinite loop
-      touch: true       // mobile swipe
-    });
-  }
+  // Open popup
+  openBtn.addEventListener("click", function () {
+    popup.style.display = "flex";
+  });
 
-  /* ---------- FAST ACTIVE MENU ON SCROLL ---------- */
-  const navLinks = document.querySelectorAll(".main-menu .nav-link");
-  const sections = document.querySelectorAll("section[id]");
+  // Close popup
+  closeBtn.addEventListener("click", function () {
+    popup.style.display = "none";
+  });
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const id = entry.target.id;
-
-          navLinks.forEach(link => {
-            link.classList.toggle(
-              "active",
-              link.getAttribute("href") === `#${id}`
-            );
-          });
-        }
-      });
-    },
-    {
-      root: null,
-      rootMargin: "-35% 0px -50% 0px", // early trigger
-      threshold: 0
+  // Close on outside click
+  popup.addEventListener("click", function (e) {
+    if (e.target === popup) {
+      popup.style.display = "none";
     }
-  );
-
-  sections.forEach(section => observer.observe(section));
+  });
 
 });
-
