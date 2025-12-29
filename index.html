@@ -94,39 +94,194 @@
           </a>
         </div>
 
-        <!-- ================= TRUSTED USERS SECTION ================= -->
-        <section class="trusted-users-section py-4">
-          <div class="container">
-            <div class="d-flex align-items-center justify-content-center gap-4">
+        <!-- ================= REVIEW SECTION ================= -->
+<section class="review-section py-4">
+  <div class="container text-start"> <!-- LEFT ALIGN -->
 
-              <div class="d-flex avatar-stack">
-                <div class="avatar ring-blue"><img src="1.jpg" alt=""></div>
-                <div class="avatar ring-green"><img src="2.jpg" alt=""></div>
-                <div class="avatar ring-orange"><img src="3.jpg" alt=""></div>
-                <div class="avatar ring-purple"><img src="4.jpg" alt=""></div>
-              </div>
+    <h4 class="fw-bold mb-1">Client Reviews</h4>
+    <p class="text-muted mb-3 small">Share your experience</p>
 
-              <div class="d-flex flex-column align-items-start gap-1">
-                <div class="text-warning d-flex gap-1">
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                </div>
+    <button class="add-review-btn mb-3" onclick="openReviewForm()">
+      ⭐ Add Your Review
+    </button>
 
-                <div class="trusted-text">
-                  Trusted by
-                  <span class="count-up" data-target="4000">0</span>+
-                  <a href="#" class="ms-1 text-primary text-decoration-underline">
-                    Pro users
-                  </a>
-                </div>
-              </div>
+    <div class="row mt-3" id="reviewList"></div>
+  </div>
+</section>
 
-            </div>
-          </div>
-        </section>
+<!-- ================= REVIEW POPUP ================= -->
+<div class="review-overlay" id="reviewOverlay">
+  <div class="review-box">
+    <span class="close-btn" onclick="closeReviewForm()">×</span>
+
+    <h6 class="fw-bold mb-3 text-start">Add Your Review</h6>
+
+    <input type="text" id="reviewName" placeholder="Your Name">
+
+    <div class="rating-stars text-start mb-3">
+      <i class="bi bi-star-fill" onclick="setRating(1)"></i>
+      <i class="bi bi-star-fill" onclick="setRating(2)"></i>
+      <i class="bi bi-star-fill" onclick="setRating(3)"></i>
+      <i class="bi bi-star-fill" onclick="setRating(4)"></i>
+      <i class="bi bi-star-fill" onclick="setRating(5)"></i>
+    </div>
+
+    <textarea id="reviewComment" placeholder="Write your comment"></textarea>
+
+    <button class="submit-review-btn w-100 mt-2" onclick="submitReview()">
+      Submit Review
+    </button>
+  </div>
+</div>
+
+<!-- ================= CSS ================= -->
+<style>
+
+/* PAGE BACKGROUND (UNCHANGED) */
+body{
+  background: transparent;
+}
+
+/* REVIEW SECTION */
+.review-section{
+  background: transparent;
+}
+
+/* BUTTON SMALLER */
+.add-review-btn{
+  background:linear-gradient(180deg,#ff9f1a,#ff6a00);
+  color:#fff;
+  font-weight:600;
+  padding:10px 20px; /* smaller */
+  font-size:14px;
+  border-radius:24px;
+  border:none;
+  box-shadow:0 6px 18px rgba(255,140,0,.4);
+}
+
+/* REVIEW CARD SMALLER */
+.review-card{
+  background:#fff;
+  border-radius:14px;
+  padding:14px; /* smaller */
+  box-shadow:0 8px 20px rgba(0,0,0,.08);
+  margin-bottom:14px;
+  font-size:14px;
+}
+
+.review-stars{
+  color:#ff8c00;
+  font-size:14px;
+}
+
+/* POPUP */
+.review-overlay{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+
+.review-box{
+  background:#fff;
+  width:100%;
+  max-width:360px; /* smaller */
+  padding:18px;
+  border-radius:16px;
+  position:relative;
+}
+
+.review-box input,
+.review-box textarea{
+  width:100%;
+  padding:10px;
+  font-size:14px;
+  border-radius:8px;
+  border:1px solid #ddd;
+  margin-bottom:12px;
+}
+
+.rating-stars i{
+  font-size:18px; /* smaller stars */
+  color:#ddd;
+  cursor:pointer;
+}
+.rating-stars i.active{
+  color:#ff8c00;
+}
+
+.submit-review-btn{
+  background:linear-gradient(180deg,#ff9f1a,#ff6a00);
+  color:#fff;
+  font-weight:600;
+  font-size:14px;
+  border-radius:24px;
+  border:none;
+  padding:10px;
+}
+
+.close-btn{
+  position:absolute;
+  right:12px;
+  top:6px;
+  font-size:22px;
+  cursor:pointer;
+}
+
+</style>
+
+<!-- ================= JS (UNCHANGED) ================= -->
+<script>
+let selectedRating = 0;
+
+function openReviewForm(){
+  document.getElementById("reviewOverlay").style.display="flex";
+}
+
+function closeReviewForm(){
+  document.getElementById("reviewOverlay").style.display="none";
+}
+
+function setRating(rating){
+  selectedRating = rating;
+  document.querySelectorAll(".rating-stars i").forEach((star,i)=>{
+    star.classList.toggle("active", i < rating);
+  });
+}
+
+function submitReview(){
+  const name = document.getElementById("reviewName").value.trim();
+  const comment = document.getElementById("reviewComment").value.trim();
+
+  if(!name || !comment || selectedRating===0){
+    alert("Please fill all fields");
+    return;
+  }
+
+  const reviewHTML = `
+    <div class="col-md-4">
+      <div class="review-card">
+        <h6 class="mb-1">${name}</h6>
+        <div class="review-stars mb-1">${"⭐".repeat(selectedRating)}</div>
+        <p class="text-muted mb-0">${comment}</p>
+      </div>
+    </div>
+  `;
+
+  document.getElementById("reviewList")
+    .insertAdjacentHTML("afterbegin", reviewHTML);
+
+  closeReviewForm();
+  reviewName.value="";
+  reviewComment.value="";
+  selectedRating=0;
+  document.querySelectorAll(".rating-stars i")
+    .forEach(s=>s.classList.remove("active"));
+}
+</script>
 
       </div>
 
@@ -416,5 +571,134 @@ document.getElementById("closeFormBtn").onclick = () =>
   </div>
 </section>
 
+
+
+
+<!-- ================= HERO SECTION ================= -->
+<section class="hero-section position-relative overflow-hidden">
+  <!-- ORANGE BACKGROUND CIRCLES -->
+  <span class="bg-circle circle-1"></span>
+  <span class="bg-circle circle-2"></span>
+  <span class="bg-circle circle-3"></span>
+
+  <div class="container">
+    <div class="row align-items-center gy-4">
+
+      <!-- LEFT CONTENT -->
+      <div class="col-lg-6 order-1 order-lg-1 hero-left text-center text-lg-start">
+        <h1 class="hero-title">
+          India’s Smart <span>Stock Market</span><br>
+          Trading Platform
+        </h1>
+
+        <p class="hero-subtitle">
+          Live Market Trends • Buy & Sell Stocks • Trade with Confidence
+        </p>
+
+        <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
+          <a href="#" class="btn btn-orange px-4 py-2">
+            Start Trading
+          </a>
+          <a href="#" class="btn btn-outline-dark px-4 py-2">
+            Live Market
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT MARKET BOX -->
+      <div class="col-lg-6 order-2 order-lg-2 hero-right">
+        <div class="market-box">
+
+          <div class="market-row up">
+            <span>NIFTY 50</span>
+            <strong>22,145.30 ▲</strong>
+          </div>
+
+          <div class="market-row down">
+            <span>SENSEX</span>
+            <strong>73,210.15 ▼</strong>
+          </div>
+
+          <div class="market-row up">
+            <span>BANK NIFTY</span>
+            <strong>46,880.40 ▲</strong>
+          </div>
+
+          <div class="trade-actions">
+            <button class="btn buy-btn">BUY</button>
+            <button class="btn sell-btn">SELL</button>
+            <button class="btn trade-btn">TRADE</button>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- OPTIONS CHAIN -->
+<div class="options-chain">
+  <div class="chain-header">
+    <strong>Options Chain</strong>
+    <small>NIFTY 50</small>
+  </div>
+
+  <div class="chain-table">
+
+    <!-- Row -->
+    <div class="chain-row">
+      <div class="call">
+        <span class="oi">12.3K</span>
+        <span class="price up">₹128</span>
+      </div>
+
+      <div class="strike">22000</div>
+
+      <div class="put">
+        <span class="price down">₹96</span>
+        <span class="oi">10.1K</span>
+      </div>
+    </div>
+
+    <!-- Row -->
+    <div class="chain-row active">
+      <div class="call">
+        <span class="oi">18.9K</span>
+        <span class="price up">₹162</span>
+      </div>
+
+      <div class="strike">22100</div>
+
+      <div class="put">
+        <span class="price down">₹121</span>
+        <span class="oi">14.7K</span>
+      </div>
+    </div>
+
+    <!-- Row -->
+    <div class="chain-row">
+      <div class="call">
+        <span class="oi">9.4K</span>
+        <span class="price up">₹94</span>
+      </div>
+
+      <div class="strike">22200</div>
+
+      <div class="put">
+        <span class="price down">₹148</span>
+        <span class="oi">19.6K</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+  
 </body>
 </html>
