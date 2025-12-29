@@ -205,29 +205,42 @@ document.getElementById("closeFormBtn").onclick = () =>
   document.getElementById("popupForm").style.display = "none";
 </script>
 
-
 <!-- ================= RUNNING DISCLAIMER BAR ================= -->
-<section class="bg-dark py-2">
+<section class="disclaimer-bar py-2">
   <div class="container-fluid">
-    <div class="text-nowrap overflow-hidden">
-      <div class="d-inline-block text-light fw-bold"
-           style="animation: scrollLeft 35s linear infinite;">
-    No. INH000009834 | BSE Enlistment No. 5584 | Investment in Stock & Commodity Market is Subject to Market Risk. 
-        Kindly Note: Intensify Research Services Pvt. Ltd. does NOT provide any profit sharing, guaranteed returns, 
-        portfolio management, demat trading, or any services not mentioned on our official website 
-        www.intensifyresearch.com. If anyone claims such services, please call 0731-4287574 or email 
-        support@intensifyresearch.com.
+    <div class="overflow-hidden text-nowrap">
+      <div class="disclaimer-text fw-bold">
+        Reg. No. INH000009834 | BSE Enlistment No. 5584 | Investment in Stock & Commodity Market is subject to market risk. 
+        Intensify Research Services Pvt. Ltd. does NOT provide profit sharing, guaranteed returns, portfolio management, 
+        demat trading, or any services not listed on www.intensifyresearch.com. 
+        For false claims, call 0731-4287574 or email support@intensifyresearch.com.
       </div>
     </div>
   </div>
 </section>
 
 <style>
+/* ================= DISCLAIMER BAR STYLE ================= */
+.disclaimer-bar{
+  background: #ffffff; /* pure white */
+  border-bottom: 1px solid #e5e5e5; /* subtle separation */
+}
+
+.disclaimer-text{
+  display: inline-block;
+  color: #000000; /* strong black text */
+  font-size: 14px;
+  white-space: nowrap;
+  animation: scrollLeft 40s linear infinite;
+}
+
+/* ================= ANIMATION ================= */
 @keyframes scrollLeft {
   0%   { transform: translateX(100%); }
   100% { transform: translateX(-100%); }
 }
 </style>
+
 
 
 <!-- ================= RATING / TESTIMONIAL SECTION ================= -->
@@ -299,6 +312,105 @@ document.getElementById("closeFormBtn").onclick = () =>
       <button class="carousel-control-next" type="button" data-bs-target="#ratingCarousel" data-bs-slide="next">
         <span class="carousel-control-next-icon"></span>
       </button>
+    </div>
+
+  </div>
+</section>
+
+
+
+<section class="complaints-section py-5">
+  <div class="container">
+
+    <div class="complaints-heading text-center mb-5">
+  <h2 class="main-title">
+    Number of Client<span>’</span>s Complaints
+  </h2>
+  <p class="sub-title">
+    We believe that transparency is needed to create trust
+  </p>
+</div>
+
+
+    <!-- Card -->
+    <div class="complaints-card">
+
+      <p class="mb-3 fw-semibold text-muted">
+        Data for the month ending – <strong>Nov, 2025</strong>
+      </p>
+
+      <div class="table-responsive">
+        <table class="table complaints-table align-middle">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Received From</th>
+              <th>Pending at the end of the month</th>
+              <th>Received</th>
+              <th>Resolved*</th>
+              <th>Total Pending</th>
+              <th>Pending complaints &gt; 3 months</th>
+              <th>Average Resolution time (in days)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Directly from Investors</td>
+              <td>0</td>
+              <td>2</td>
+              <td><span class="badge bg-success">2</span></td>
+              <td>0</td>
+              <td>NA</td>
+              <td>15 Days</td>
+            </tr>
+
+            <tr>
+              <td>2</td>
+              <td>SEBI SCORES</td>
+              <td>0</td>
+              <td>1</td>
+              <td><span class="badge bg-success">1</span></td>
+              <td>0</td>
+              <td>NA</td>
+              <td>20 Days</td>
+            </tr>
+
+            <tr>
+              <td>3</td>
+              <td>Other Sources (If Any)</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>NA</td>
+              <td>Nil</td>
+            </tr>
+
+            <tr class="table-total">
+              <td colspan="3">Grand Total</td>
+              <td>3</td>
+              <td>3</td>
+              <td>0</td>
+              <td>NA</td>
+              <td>Nil</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Note -->
+    <p class="text-muted small mt-3">
+      Average Resolution time is calculated as the total time taken to resolve complaints (in days)
+      divided by the total number of complaints resolved during the month.
+    </p>
+
+    <!-- CTA Button -->
+    <div class="text-center mt-4">
+      <a href="#" class="btn complaint-btn">
+        Monthly / Annual Complaints
+      </a>
     </div>
 
   </div>

@@ -789,3 +789,109 @@ body {
   }
 }
 
+/* ================= SECTION ================= */
+.complaints-section{
+  background:#f8f9fc;
+}
+
+/* ================= CARD ================= */
+.complaints-card{
+  background:#fff;
+  border-radius:18px;
+  padding:28px;
+  box-shadow:0 18px 45px rgba(0,0,0,0.08);
+  animation: fadeUp 0.8s ease;
+}
+
+/* ================= TABLE ================= */
+.complaints-table{
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.complaints-table thead th{
+  background:#f1f3f8;
+  font-size:14px;
+  font-weight:700;
+  color:#333;
+  padding:14px;
+  position:sticky;
+  top:0;
+  z-index:1;
+}
+
+.complaints-table tbody td{
+  padding:14px;
+  font-size:14px;
+  color:#333;
+  border-top:1px solid #e6e9f2;
+}
+
+/* Hover row */
+.complaints-table tbody tr{
+  transition: all 0.25s ease;
+}
+
+.complaints-table tbody tr:hover{
+  background:#fff6e8;
+  transform: scale(1.01);
+}
+
+/* Total row */
+.table-total{
+  background:#fff2dc;
+  font-weight:700;
+}
+
+/* ================= ANIMATION ================= */
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform: translateY(20px);
+  }
+  to{
+    opacity:1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= ORANGE CTA BUTTON ================= */
+.complaint-btn{
+  position: relative;
+  padding: 14px 34px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #ff9f1a, #ff6a00);
+  border: none;
+  overflow: hidden;
+  transition: all 0.35s ease;
+  box-shadow: 0 10px 28px rgba(255,140,0,0.45);
+}
+
+.complaint-btn:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 16px 38px rgba(255,140,0,0.6);
+  color:#fff;
+}
+
+.complaint-btn::after{
+  content:"";
+  position:absolute;
+  inset:-150% -40%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.75),
+    transparent
+  );
+  transform: rotate(20deg);
+  animation: shineMove 3.5s infinite;
+}
+
+@keyframes shineMove{
+  0% { transform: translateX(-100%) rotate(20deg); }
+  100% { transform: translateX(120%) rotate(20deg); }
+}
+
