@@ -92,13 +92,60 @@
             Explore Services
           </a>
         </div>
+<!-- ================= TRUSTED USERS SECTION ================= -->
+<section class="trusted-users-section py-4">
+  <div class="container">
+    <div class="d-flex align-items-center justify-content-center gap-4">
+
+      <!-- Avatars -->
+      <div class="d-flex avatar-stack">
+        <div class="avatar ring-blue">
+          <img src="1.jpg" alt="User 1" loading="lazy">
+        </div>
+        <div class="avatar ring-green">
+          <img src="2.jpg" alt="User 2" loading="lazy">
+        </div>
+        <div class="avatar ring-orange">
+          <img src="3.jpg" alt="User 3" loading="lazy">
+        </div>
+        <div class="avatar ring-purple">
+          <img src="4.jpg" alt="User 4" loading="lazy">
+        </div>
+      </div>
+
+      <!-- Rating + Text -->
+      <div class="d-flex flex-column align-items-start gap-1">
+
+        <!-- Stars -->
+        <div class="text-warning d-flex gap-1">
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+        </div>
+
+        <!-- Caption -->
+        <div class="trusted-text">
+          Trusted by
+          <span class="count-up" data-target="4000">0</span>+
+          <a href="#" class="ms-1 text-primary text-decoration-underline">
+            Pro users
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
 
       </div>
 
       <!-- RIGHT VISUAL -->
       <div class="col-lg-6 col-md-12 d-flex justify-content-center position-relative mt-4 mt-lg-0">
         <div class="center-graphic position-relative">
-          <img src="trading3.png" alt="Trading Main" class="img-fluid">
+          <img src="HeroImage.png" alt="Trading Main" class="img-fluid">
 
           <div class="icon-circle circle-top"><span class="text">Live Targets</span></div>
           <div class="icon-circle circle-left"><span class="text">Technical Analysis</span></div>
@@ -180,6 +227,9 @@ document.getElementById("openFormBtn").onclick = () =>
 document.getElementById("closeFormBtn").onclick = () =>
   document.getElementById("popupForm").style.display = "none";
 </script>
+
+
+
 
 </body>
 </html>
